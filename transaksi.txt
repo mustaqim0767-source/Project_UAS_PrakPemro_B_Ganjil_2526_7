@@ -1,4 +1,14 @@
-3001;1001;2001;1763183599;1763183623;0.000000
-;0
-3002;1001;2001;1763187142;0;0.000000
-3003;1002;2002;1763187158;0;0.000000
+3001;1001;2001;1763287118;0;0.000000
+3002;1003;2002;1763289720;0;0.000000
+3003;1007;2005;1763289732;1763289745;0.000000
+Andrea Hirata;4;0
+1006;Cantik Itu Luka;Eka Kurniawan;4;0
+1007;Laut Bercerita;Leila S.Chudori;4;0
+1008;Bumi Manusia;Pramoedya Ananta Toer;4;0
+1009;Laskar Pelangi;Ahmad Tohari;4;0
+1011;Bumi;Tere Liye;4;0
+1012;3726 mdpl;Nurwina Sari;4;0
+1013;Hujan;Tere Liye;4;0
+1014;Senja Padam;Rintik Sedu;4;0
+1015;Ruang Rindu;Boy Candra;4;0
+1016;BrigeStone;J.core;0;0
