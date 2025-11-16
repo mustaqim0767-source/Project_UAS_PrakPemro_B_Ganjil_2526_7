@@ -57,8 +57,8 @@ void lihatDaftarBuku() {
     } else {
         int empty = 1;
         // 1. Baca file baris per baris
-        while(fscanf(fp, "%d;%99[^;];%99[^;];%d;%d\n", 
-               &b.idBuku, b.judul, b.penulis, &kategoriInt, &statusInt) != EOF) 
+        while(fscanf(fp, "%d;%99[^;];%99[^;];%d;%d", 
+               &b.idBuku, b.judul, b.penulis, &kategoriInt, &statusInt) == 5) 
         {
             empty = 0;
             b.kategori = (KategoriBuku)kategoriInt;
@@ -101,8 +101,8 @@ void hapusBuku() {
     }
 
     // Baca file asli, tulis ulang ke file temp KECUALI data yang mau dihapus
-    while(fscanf(fp, "%d;%99[^;];%99[^;];%d;%d\n", 
-           &b.idBuku, b.judul, b.penulis, (int*)&b.kategori, (int*)&b.status) != EOF)
+    while(fscanf(fp, "%d;%99[^;];%99[^;];%d;%d", 
+           &b.idBuku, b.judul, b.penulis, (int*)&b.kategori, (int*)&b.status) == 5)
     {
         if (b.idBuku == idHapus) {
             ditemukan = 1; // Tandai data ditemukan
@@ -152,8 +152,8 @@ void editBuku() {
     }
 
     // Baca file asli, tulis ulang ke file temp
-    while(fscanf(fp, "%d;%99[^;];%99[^;];%d;%d\n", 
-           &b.idBuku, b.judul, b.penulis, (int*)&b.kategori, (int*)&b.status) != EOF)
+    while(fscanf(fp, "%d;%99[^;];%99[^;];%d;%d", 
+           &b.idBuku, b.judul, b.penulis, (int*)&b.kategori, (int*)&b.status) == 5)
     {
         if (b.idBuku == idEdit) {
             ditemukan = 1;
@@ -234,8 +234,8 @@ void cariBuku() {
     if (fp == NULL) {
         printf("Gagal membuka file buku.\n");
     } else {
-        while(fscanf(fp, "%d;%99[^;];%99[^;];%d;%d\n", 
-               &b.idBuku, b.judul, b.penulis, &kategoriInt, &statusInt) != EOF) 
+        while(fscanf(fp, "%d;%99[^;];%99[^;];%d;%d", 
+               &b.idBuku, b.judul, b.penulis, &kategoriInt, &statusInt) == 5) 
         {
             b.kategori = (KategoriBuku)kategoriInt;
             b.status = (StatusBuku)statusInt;
@@ -281,8 +281,8 @@ int ubahStatusBuku(int idBuku, StatusBuku statusBaru) {
         return 0; // Gagal
     }
 
-    while(fscanf(fp, "%d;%99[^;];%99[^;];%d;%d\n", 
-           &b.idBuku, b.judul, b.penulis, (int*)&b.kategori, (int*)&b.status) != EOF)
+    while(fscanf(fp, "%d;%99[^;];%99[^;];%d;%d", 
+           &b.idBuku, b.judul, b.penulis, (int*)&b.kategori, (int*)&b.status) == 5)
     {
         if (b.idBuku == idBuku) {
             ditemukan = 1;
