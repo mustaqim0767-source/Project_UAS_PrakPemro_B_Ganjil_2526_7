@@ -18,9 +18,9 @@ void lihatTransaksiAktif() {
         return;
     }
 
-    while(fscanf(fp, "%d;%d;%d;%ld;%ld;%lf\n", 
+    while(fscanf(fp, "%d;%d;%d;%ld;%ld;%lf", 
            &t.idTransaksi, &t.idBuku, &t.idAnggota, 
-           &tglPinjam, &tglKembali, &t.denda) != EOF) 
+           &tglPinjam, &tglKembali, &t.denda) == 6) 
     {
         if (tglKembali == 0) { // Belum dikembalikan
             ada = 1;
@@ -127,9 +127,9 @@ void pengembalianBuku() {
         return;
     }
 
-    while(fscanf(fp, "%d;%d;%d;%ld;%ld;%lf\n", 
+    while(fscanf(fp, "%d;%d;%d;%ld;%ld;%lf", 
            &t.idTransaksi, &t.idBuku, &t.idAnggota, 
-           &tglPinjam, &tglKembali, &t.denda) != EOF) 
+           &tglPinjam, &tglKembali, &t.denda) == 6) 
     {
         if (t.idTransaksi == idTransaksi && tglKembali == 0) { // Cocok & masih aktif
             ditemukan = 1;
@@ -233,9 +233,9 @@ void tampilkanRankingBuku() {
     }
 
     // 1. baca semua transaksi dan hitung frekuensi
-    while(fscanf(fp, "%d;%d;%d;%ld;%ld;%lf\n", 
+    while(fscanf(fp, "%d;%d;%d;%ld;%ld;%lf", 
            &t.idTransaksi, &t.idBuku, &t.idAnggota, 
-           &tglPinjam, &tglKembali, &t.denda) != EOF) 
+           &tglPinjam, &tglKembali, &t.denda) == 6) 
     {
         int ditemukan = 0;
         // cek apakah buku sudah ada di daftar ranking
