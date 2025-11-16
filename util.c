@@ -164,8 +164,8 @@ void getBukuJudul(int idBuku, char* judulBuffer) {
 
     if (fp == NULL) return;
 
-    while(fscanf(fp, "%d;%99[^;];%99[^;];%d;%d\n", 
-           &b.idBuku, b.judul, b.penulis, &kat, &stat) != EOF) 
+    while(fscanf(fp, "%d;%99[^;];%99[^;];%d;%d", 
+           &b.idBuku, b.judul, b.penulis, &kat, &stat) == 5) 
     {
         if (b.idBuku == idBuku) {
             strcpy(judulBuffer, b.judul);
@@ -182,7 +182,7 @@ int isAnggotaValid(int idAnggota) {
     int valid = 0;
     if (fp == NULL) return 0;
 
-    while(fscanf(fp, "%d;%99[^;];%49[^\n]\n", &a.idAnggota, a.nama, a.kontak) != EOF) {
+    while(fscanf(fp, "%d;%99[^;];%49[^\n]", &a.idAnggota, a.nama, a.kontak) == 3) {
         if (a.idAnggota == idAnggota) {
             valid = 1;
             break;
@@ -200,8 +200,8 @@ int isBukuAvailable(int idBuku) {
     int available = 0;
     if (fp == NULL) return 0;
 
-    while(fscanf(fp, "%d;%99[^;];%99[^;];%d;%d\n", 
-           &b.idBuku, b.judul, b.penulis, &kat, &stat) != EOF) 
+    while(fscanf(fp, "%d;%99[^;];%99[^;];%d;%d", 
+           &b.idBuku, b.judul, b.penulis, &kat, &stat) == 5) 
     {
         if (b.idBuku == idBuku) {
             if (stat == TERSEDIA) {
@@ -222,7 +222,7 @@ void getAnggotaNama(int idAnggota, char* namaBuffer) {
 
     if (fp == NULL) return;
 
-    while(fscanf(fp, "%d;%99[^;];%49[^\n]\n", &a.idAnggota, a.nama, a.kontak) != EOF) {
+    while(fscanf(fp, "%d;%99[^;];%49[^\n]", &a.idAnggota, a.nama, a.kontak) == 3) {
         if (a.idAnggota == idAnggota) {
             strcpy(namaBuffer, a.nama);
             break;
