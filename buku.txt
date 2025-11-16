@@ -1,6 +1,6 @@
 1001;JimsHoney;Shifa;4;1
-1002;Soto Jawa;Fathul;4;1
-1003;Resep;Raisa;4;0
+1002;Soto Jawa;Fathul;4;0
+1003;Resep;Raisa;4;1
 1004;Lontong Tambo;Kia;4;0
 1005;Laskar Pelangi;Andrea Hirata;4;0
 1006;Cantik Itu Luka;Eka Kurniawan;4;0
@@ -12,3 +12,4 @@
 1013;Hujan;Tere Liye;4;0
 1014;Senja Padam;Rintik Sedu;4;0
 1015;Ruang Rindu;Boy Candra;4;0
+1016;BrigeStone;J.core;0;0
