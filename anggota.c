@@ -100,9 +100,10 @@ void lihatRiwayatPeminjaman() {
         printf("Gagal membuka file transaksi.\n");
     } else {
         // Format: IDTrx;IDBuku;IDAnggota;TglPinjam;TglKembali;Denda
-        while(fscanf(fp, "%d;%d;%d;%ld;%ld;%lf\n", 
-               &t.idTransaksi, &t.idBuku, &t.idAnggota, 
-               &tglPinjamLong, &tglKembaliLong, &t.denda) != EOF) 
+        // --- VERSI BARU YANG AMAN ---
+        while(fscanf(fp, "%d;%d;%d;%ld;%ld;%lf", 
+                &t.idTransaksi, &t.idBuku, &t.idAnggota, 
+                &tglPinjamLong, &tglKembaliLong, &t.denda) == 6)
         {
             if (t.idAnggota == idAnggota) {
                 ditemukan = 1;
